@@ -10,6 +10,7 @@ export class EventEmitterService {
   constructor() { }
 
   emitToast(title: string, message: string) {
+    console.log(title + "entrooooooooo");
     this.invokeToasts.emit({
       title: title,
       message: message

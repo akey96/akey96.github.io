@@ -3,7 +3,7 @@
     <app-title icon="fa-trophy" title="PROJECTS"></app-title>
     <div class="row">
         <div class="col mb-3" *ngFor="let repositoryInformation of repositoryData">
-          <p class="form-label" *ngIf="!repositoryInformation || repositoryData.length == 0" >Oops, não foi possível carregar esse projeto.</p>
+          <p class="form-label" *ngIf="!repositoryInformation || repositoryData.length == 0" >Sorry, It's not possible load this projects</p>
           <app-project-card
             *ngIf="repositoryInformation"
             [projectTitle]="repositoryInformation.name"

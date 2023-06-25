@@ -27,12 +27,13 @@ export class ContactComponent implements OnInit {
         this.eventEmitterService.emitToast("Failed!", "Input is not long enough.")
         return;
       }
-      this.http.post('https://formspree.io/f/xnqrzqvg',
+      this.http.post('https://formspree.io/f/xwkdevyr',
         { 'email address': email, message: message },
         { 'headers': headers }).subscribe(
           response => {
-            console.log(response);
-            if (response == "ok") {
+            let res: any = response;
+            console.log(res);
+            if (res['ok'] == true) {
               this.eventEmitterService.emitToast("Success!", "E-mail succesfully sent.")
             }
           }
