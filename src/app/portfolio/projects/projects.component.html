@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <div class="row">
+    <app-title icon="fa-trophy" title="PROJECTS"></app-title>
+    <div class="row">
+        <div class="col mb-3" *ngFor="let repositoryInformation of repositoryData">
+          <p class="form-label" *ngIf="!repositoryInformation || repositoryData.length == 0" >Oops, não foi possível carregar esse projeto.</p>
+          <app-project-card
+            *ngIf="repositoryInformation"
+            [projectTitle]="repositoryInformation.name"
+            [projectDescription]="repositoryInformation.description"
+            [projectImage]="repositoryInformation.image"
+            [projectRepository]="repositoryInformation.link"
+          >
+          </app-project-card>
+        </div>
+    </div>
+  </div>
+</div>
+
